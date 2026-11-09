@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "pipeline_id": "fatonauta-youtube-shorts-v1",
+  "video_id": "cg-bunker-001",
+  "status": "draft",
+  "pipeline_state": "draft",
+  "title_working": "Como funcionaria um bunker subterrâneo?",
+  "niche": "Conhecimentos Gerais",
+  "platform_stage": "youtube_pre_publish",
+  "locale": "pt-BR",
+  "canvas": {"width": 1080, "height": 1920, "fps": 30},
+  "duration_seconds": 30,
+  "publication_enabled": false,
+  "external_generation_enabled": false,
+  "visual_style_selection": {
+    "catalog": "config/visual_styles.json",
+    "status": "pending_storyboard_and_visual_review",
+    "candidates": ["isometric", "3d_explainer", "paper_cut"],
+    "selected_by_scene": []
+  },
+  "script": {
+    "word_target": {"min": 65, "max": 85},
+    "voice_text_status": "pending_factual_review",
+    "voice_text": ""
+  },
+  "voice": {
+    "engine": "Piper 1.8.0",
+    "model": "pt_BR-faber-medium",
+    "sample_rate_hz": 22050,
+    "status": "approved_for_local_mvp_tests",
+    "upload_status": "blocked_pending_weight_license_review",
+    "commercial_release_status": "pending_weight_license_review",
+    "license_evidence": "assets/voices/piper/pt_BR-faber-medium/LICENSE_EVIDENCE.md",
+    "first_test": "outputs/audio/faber-teste-fatonauta-01-normalizado.mp3",
+    "first_test_review": "rejected_by_owner_as_too_robotic",
+    "diagnostic_pair": "outputs/audio/faber-reference",
+    "diagnostic_review": "local_same_text_sample_approved_by_owner"
+  },
+  "timeline": [
+    {"scene": 1, "start": 0, "end": 3, "purpose": "gancho", "visual": "Corte do solo revelando o bunker", "audio": "impacto curto e início da narração"},
+    {"scene": 2, "start": 3, "end": 9, "purpose": "estrutura", "visual": "Camadas de concreto, entrada e vedação", "audio": "narração e ambiente discreto"},
+    {"scene": 3, "start": 9, "end": 16, "purpose": "sobrevivência", "visual": "Ar, água, energia e alimentos", "audio": "narração e efeitos leves"},
+    {"scene": 4, "start": 16, "end": 24, "purpose": "limites", "visual": "Espaço, manutenção e duração dos recursos", "audio": "narração com mudança de ritmo"},
+    {"scene": 5, "start": 24, "end": 30, "purpose": "conclusão", "visual": "Visão geral do bunker e pergunta final", "audio": "conclusão e encerramento musical"}
+  ],
+  "required_evidence": [
+    "fontes factuais do roteiro",
+    "licenças dos ativos",
+    "relatório de áudio",
+    "relatório de vídeo",
+    "checagem de duração e resolução"
+  ],
+  "acceptance": {
+    "duration_tolerance_seconds": 0.25,
+    "resolution": "1080x1920",
+    "aspect_ratio": "9:16",
+    "audio_required": true,
+    "captions_required": true,
+    "manual_editing_after_render": false,
+    "publish": false
+  }
+}
+

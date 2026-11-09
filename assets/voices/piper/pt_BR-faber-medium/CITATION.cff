@@ -1,0 +1,21 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Open Home Foundation Voice
+message: >-
+  If you use this dataset, please cite it using the metadata
+  from this file.
+type: dataset
+authors:
+  - email: voice@openhomefoundation.org
+    given-names: Open Home
+    family-names: Foundation
+repository-code: 'https://github.com/OHF-Voice/voice-datasets'
+url: 'https://www.openhomefoundation.org/'
+abstract: Datasets of Home Assistant Voice Contributors
+keywords:
+  - home-assistant
+  - text-to-speech
+  - year-of-voice
+license: CC0-1.0

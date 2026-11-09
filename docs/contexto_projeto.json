@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0.0",
+  "project": {
+    "name": "AI Content Studio",
+    "intent": "Criar renda com vídeos curtos produzidos com IA, com alta automação, qualidade suficiente para retenção e monetização e custo inicial mínimo.",
+    "current_phase": "Ambiente local validado; MVP do FatoNauta aguardando briefing",
+    "language": "pt-BR"
+  },
+  "provenance": {
+    "source_conversation_id": "6af007b5-ab7c-83e9-9fa3-4a61c68f2a64",
+    "source_title": "Criar vídeos com IA",
+    "recovered_turns": 5,
+    "limitation": "A referência recuperada disponibilizou apenas cinco turnos recentes. Detalhes literais de mensagens anteriores, inclusive nomes exatos de canais de referência e a lista original completa dos onze agentes, não estavam disponíveis.",
+    "policy": "Campos ausentes não foram preenchidos com fatos, credenciais ou referências inventadas. Nomes de agentes foram normalizados a partir das funções confirmadas e estão identificados como nomenclatura operacional."
+  },
+  "channels": [
+    {
+      "niche": "Kids",
+      "platforms": ["YouTube", "TikTok"],
+      "formats": ["personagens recorrentes", "animações", "músicas originais licenciadas", "conteúdo educativo"],
+      "special_rules": ["classificar corretamente conteúdo para crianças", "validar direitos comerciais de música e vozes"]
+    },
+    {
+      "niche": "Bíblico",
+      "platforms": ["YouTube", "TikTok"],
+      "formats": ["histórias", "curiosidades", "minifilmes"],
+      "special_rules": ["registrar fontes", "distinguir texto bíblico, tradição e dramatização"]
+    },
+    {
+      "niche": "Conhecimentos Gerais",
+      "platforms": ["YouTube", "TikTok"],
+      "formats": ["explicações visuais", "simulações", "curiosidades"],
+      "special_rules": ["verificar fatos", "registrar fontes"]
+    }
+  ],
+  "reference_channels": {
+    "status": "pendente",
+    "items": [],
+    "note": "Os nomes ou URLs dos canais citados nas mensagens antigas não vieram no histórico recuperado; devem ser adicionados pelo usuário ou por nova leitura de fonte, nunca inferidos."
+  },
+  "consolidated_decisions": [
+    "Manter seis perfis: três nichos em duas plataformas.",
+    "Preservar os onze agentes originais como papéis lógicos; acrescentar quatro papéis especializados após a homologação inicial do canal.",
+    "Usar Python como linguagem principal e Codex no desenvolvimento.",
+    "Usar AGENTS.md e Skills para instruções duráveis e fluxos reutilizáveis.",
+    "Usar o notebook ASUS como orquestrador e editor inicial; não contratar VM no piloto.",
+    "Adotar Supabase como memória operacional futura, evitando vídeos pesados no Storage gratuito.",
+    "Usar Blender para 3D simples, FFmpeg para montagem e TTS local inicialmente.",
+    "Usar Runway/MCP apenas como complemento opcional, sujeito a créditos e disponibilidade.",
+    "Homologar um canal e uma plataforma por vez.",
+    "Começar por Conhecimentos Gerais no YouTube e depois TikTok.",
+    "Não abrir ou publicar nos seis perfis antes de validar a produção.",
+    "Primeiro MVP: vídeo vertical de 30 segundos sobre como funciona um bunker subterrâneo.",
+    "Canal FatoNauta no YouTube criado e com personalização inicial publicada.",
+    "Quinze papéis lógicos com contratos Markdown; uma única skill coordena o pipeline FatoNauta.",
+    "Ambiente local configurado com Python 3.13.17, FFmpeg 9.0.2, Blender 5.2.3 LTS e Piper TTS 1.8.0.",
+    "Voz pt_BR-faber-medium escolhida para testes locais do MVP; qualquer upload depende da revisão final da licença dos pesos e do modelo-base.",
+    "Adicionar quatro papéis: títulos e thumbnails, comunidade, calendário editorial e estratégia de alcance.",
+    "Roteiro sugere e direção visual seleciona estilos por cena, incluindo opções HTML/CSS/JS e Three.js, com catálogo versionado.",
+    "Cada papel auto-revisa sua entrega, corrige erros e registra o resultado antes de repassar ao Orquestrador; revisão independente e autorização humana continuam exigidas quando aplicáveis."
+  ],
+  "suggestions_not_yet_approved_or_verified": [
+    "Agendador de Tarefas do Windows junto com automações do Codex para o MVP.",
+    "Streamlit como interface de gestão opcional.",
+    "ComfyUI apenas se o hardware permitir.",
+    "Serviços externos de vídeo para cenas complexas quando houver autorização e orçamento."
+  ],
+  "hardware": {
+    "model": "ASUS Vivobook 15 M1502YA-NJ655W",
+    "cpu": "AMD Ryzen 7 5825U, 8 núcleos / 16 threads",
+    "ram": "16 GB DDR4",
+    "storage": "SSD 512 GB",
+    "os": "Windows 11",
+    "gpu": "AMD Radeon integrada",
+    "assessment": "Adequado para orquestração, Python, FFmpeg, TTS e edição; limitado para IA de vídeo local pesada e renderização 3D cinematográfica em escala."
+  },
+  "stack": {
+    "primary_language": "Python",
+    "development": ["Codex", "AGENTS.md", "Skills"],
+    "operational_memory_future": "Supabase",
+    "media": ["Blender", "FFmpeg", "TTS local"],
+    "scheduling_initial": ["Codex", "Agendador de Tarefas do Windows"],
+    "optional": ["Runway MCP", "ComfyUI", "Streamlit"],
+    "publishing": "APIs oficiais ou serviços autorizados"
+  },
+  "agents": [
+    {"id": 1, "name": "Orquestrador Geral", "function": "Priorizar trabalhos, distribuir tarefas, aplicar gates e controlar estados."},
+    {"id": 2, "name": "Gestor Kids", "function": "Manter identidade, público, personagens e regras do nicho infantil."},
+    {"id": 3, "name": "Gestor Bíblico", "function": "Manter identidade, fontes e abordagem narrativa do nicho bíblico."},
+    {"id": 4, "name": "Gestor Conhecimentos Gerais", "function": "Manter identidade e linha editorial do nicho factual."},
+    {"id": 5, "name": "Pesquisador de Tendências e Fontes", "function": "Encontrar temas, verificar fatos e registrar fontes e riscos."},
+    {"id": 6, "name": "Roteirista e Storyboard", "function": "Criar gancho, roteiro cronometrado e plano de cenas."},
+    {"id": 7, "name": "Diretor Visual", "function": "Escolher técnica, estilo e padrões de consistência visual."},
+    {"id": 8, "name": "Produtor de Mídia", "function": "Gerar ou renderizar cenas e preparar ativos para edição."},
+    {"id": 9, "name": "Diretor de Áudio", "function": "Gerir TTS, música, efeitos, mixagem, sincronização e licenças."},
+    {"id": 10, "name": "SEO e Publicação", "function": "Preparar título, capa, descrição, palavras-chave e publicação autorizada por plataforma."},
+    {"id": 11, "name": "Analista de Qualidade e Métricas", "function": "Validar entregáveis e analisar retenção, visualizações, inscritos e outros sinais disponíveis."},
+    {"id": 12, "name": "Diretor de Títulos e Thumbnails", "function": "Criar embalagens fiéis ao vídeo e testar hipóteses de clique quando houver dados."},
+    {"id": 13, "name": "Gestor de Comunidade", "function": "Preparar respostas a comentários e identificar dúvidas e ideias; envio exige autorização."},
+    {"id": 14, "name": "Planejador Editorial", "function": "Planejar Shorts, vídeos e posts com base em capacidade e métricas reais."},
+    {"id": 15, "name": "Estrategista de Alcance", "function": "Revisar gancho, ritmo e retenção como hipóteses, sem prometer viralidade."}
+  ],
+  "quality_and_monetization": {
+    "automation_target": "Fluxo ponta a ponta, com retorno ao agente responsável quando houver falha de áudio, cena, legenda ou metadados.",
+    "quality_target": "Vídeo coerente, áudio inteligível, legendas sincronizadas, gancho forte e identidade consistente.",
+    "monetization_constraints": [
+      "Usar somente ativos com direitos comerciais e multiplataforma adequados.",
+      "Não depender de plano gratuito que exclua monetização.",
+      "Evitar conteúdo repetitivo, enganoso ou de baixo valor transformativo.",
+      "Guardar evidência de licença e origem por ativo."
+    ]
+  },
+  "seo_publication_metrics": {
+    "youtube_priority": ["título", "thumbnail", "descrição", "retenção"],
+    "tiktok_priority": ["gancho inicial", "legenda curta", "palavras-chave naturais", "poucas hashtags relevantes"],
+    "metrics": ["visualizações", "retenção", "taxa de cliques quando disponível", "inscritos/seguidores", "desempenho por formato"],
+    "publication_rule": "Nenhuma publicação automática até validar qualidade, credenciais, permissões, classificação de público e modo de recuperação."
+  },
+  "costs_and_limits": {
+    "pilot_budget_goal": "R$ 0 adicional, salvo aprovação expressa posterior.",
+    "known_constraints": [
+      "Notebook precisa estar ligado para renderizações locais.",
+      "GPU integrada limita modelos grandes e 3D cinematográfico.",
+      "MCP não torna um serviço gratuito; créditos e plano devem ser verificados no momento de uso.",
+      "Limites e preços de planos externos são temporais e devem ser confirmados em fonte oficial antes de decisão."
+    ]
+  },
+  "pilot": {
+    "title": "Como funcionaria um bunker subterrâneo?",
+    "niche": "Conhecimentos Gerais",
+    "duration_seconds": 30,
+    "format": "vertical 9:16",
+    "resolution": "1080x1920",
+    "required_outputs": ["roteiro", "storyboard", "cenas", "narração", "música/efeitos licenciados", "legendas sincronizadas", "MP4", "relatório de validação"],
+    "manual_editing_target": "zero após o pipeline estar homologado",
+    "publication_in_mvp": false
+  },
+  "timeline": [
+    {
+      "at": "2026-11-08T03:01:23-03:00",
+      "speaker": "user",
+      "summary": "Questionou notebook versus VM, banco local versus Supabase, .NET versus Python, agendamento do Codex e Runway MCP."
+    },
+    {
+      "at": "2026-11-08T03:01:23-03:00",
+      "speaker": "assistant",
+      "summary": "Recomendou Python, Supabase, Codex, notebook local, Blender/FFmpeg, agendamento híbrido e Runway opcional; sugeriu uma arquitetura enxuta de oito funções."
+    },
+    {
+      "at": "2026-11-08T03:08:48-03:00",
+      "speaker": "user",
+      "summary": "Rejeitou a redução para oito funções, pediu a manutenção dos onze agentes e informou o modelo do notebook."
+    },
+    {
+      "at": "2026-11-08T03:08:48-03:00",
+      "speaker": "assistant",
+      "summary": "Consolidou onze agentes, detalhou áudio e SEO, avaliou o notebook e propôs um piloto de 30 segundos."
+    },
+    {
+      "at": "2026-11-08T03:12:38-03:00",
+      "speaker": "user",
+      "summary": "Perguntou o próximo passo."
+    },
+    {
+      "at": "2026-11-08T03:12:38-03:00",
+      "speaker": "assistant",
+      "summary": "Definiu o MVP do bunker em 9:16, 1080x1920, com produção automatizada e sem abrir ainda os seis perfis."
+    },
+    {
+      "at": "2026-11-08T03:14:24-03:00",
+      "speaker": "user",
+      "summary": "Decidiu homologar um canal por vez em cada plataforma."
+    },
+    {
+      "at": "2026-11-08T03:14:24-03:00",
+      "speaker": "assistant",
+      "summary": "Definiu a ordem Conhecimentos Gerais, Bíblico e Kids, primeiro YouTube e depois TikTok para cada nicho."
+    },
+    {
+      "at": "2026-11-08T21:19:38-03:00",
+      "speaker": "user",
+      "summary": "Pediu um JSON do histórico para uso no Codex."
+    },
+    {
+      "at": "2026-11-08T23:59:00-03:00",
+      "speaker": "user",
+      "summary": "Confirmou que a identidade inicial do canal FatoNauta foi enviada e publicada no YouTube."
+    },
+    {
+      "at": "2026-11-08T23:59:30-03:00",
+      "speaker": "assistant",
+      "summary": "Estruturou os onze contratos de papéis, uma skill única e a máquina de estados do fluxo de criação do FatoNauta."
+    }
+  ],
+  "security_and_licenses": [
+    "Nunca inventar, registrar ou solicitar credenciais em texto aberto.",
+    "Usar variáveis de ambiente e princípio do menor privilégio.",
+    "Separar modo de simulação de modo de publicação.",
+    "Exigir confirmação explícita antes de compras, assinaturas, publicação ou mudanças externas irreversíveis.",
+    "Registrar origem e licença de cada ativo; verificar uso comercial e multiplataforma.",
+    "Não usar material protegido, voz clonada ou imagem de pessoa real sem autorização adequada.",
+    "Verificar fatos e manter fontes para conteúdo factual e bíblico.",
+    "Respeitar regras de conteúdo infantil e políticas atuais das plataformas."
+  ],
+  "pending_decisions": [
+    "Nomes e URLs dos canais de referência.",
+    "Nomes dos cinco perfis restantes; FatoNauta no YouTube já está definido.",
+    "Identidade visual e voz de cada nicho.",
+    "Liberação da voz Faber para upload após revisão da licença dos pesos e do modelo-base Lessac.",
+    "Biblioteca de música e efeitos com direitos multiplataforma.",
+    "Formato exato dos registros no Supabase.",
+    "Credenciais e permissões de publicação, somente na fase de integração.",
+    "Critérios numéricos mínimos para homologação após os primeiros testes."
+  ],
+  "next_steps": [
+    "Aprovar o briefing editorial do piloto do bunker.",
+    "Criar e aprovar o pacote factual com fontes do piloto.",
+    "Fechar roteiro e storyboard cronometrados.",
+    "Escolher a técnica visual por cena e registrar a justificativa no manifesto.",
+    "Produzir o primeiro render local com a voz Faber e ativos de licença verificada.",
+    "Medir tempo, qualidade e tamanho; validar o vídeo antes de qualquer upload.",
+    "Revisar a licença comercial da Faber antes de considerar uso público monetizado."
+  ]
+}
+

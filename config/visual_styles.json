@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "selection_rule": "Escolher por clareza da explicação, custo, tempo, legibilidade vertical, consistência e licença; estilo não garante viralidade.",
+  "prompt_template": "Crie uma cena original de {duracao}s em 9:16 para explicar {ideia_verificada}. Estilo: {estilo}. Elementos: {elementos}. Movimento: {movimento}. Preserve área para legendas, contraste e identidade FatoNauta. Sem texto ilegível, marcas, pessoas reais ou fatos não verificados.",
+  "styles": [
+    {"id":"isometric","name":"Isometric","best_for":"estrutura, fluxos e espaços em corte","route":"Blender ou SVG/Canvas","motion":"câmera suave e camadas reveladas"},
+    {"id":"paper_cut","name":"Paper-Cut","best_for":"camadas e processos simples","route":"SVG/HTML/CSS/JS","motion":"recortes em profundidade com parallax"},
+    {"id":"3d_data_chart","name":"3D Data Chart","best_for":"dados com fonte e escala verificadas","route":"Three.js ou Blender","motion":"barras ou objetos construídos por etapa"},
+    {"id":"synthwave","name":"Synthwave","best_for":"atmosfera tecnológica, sem prejudicar leitura","route":"CSS/Canvas ou Blender","motion":"grid e luz em deslocamento discreto"},
+    {"id":"3d_explainer","name":"3D Explainer","best_for":"mecanismos e relação espacial","route":"Blender ou Three.js","motion":"corte, rotação e destaque de peças"},
+    {"id":"maths_diagram","name":"Maths Diagram","best_for":"medidas, proporções e relações quantitativas","route":"SVG/Canvas/HTML","motion":"desenho progressivo de linhas e rótulos"},
+    {"id":"cartoon_explainer","name":"Cartoon Explainer","best_for":"analogias e personagens originais","route":"SVG/Canvas ou composição 2D","motion":"poses e transições simples"},
+    {"id":"domino_reveal","name":"Domino Reveal","best_for":"cadeia causal e sequência de eventos","route":"CSS/JS ou Blender","motion":"um elemento aciona a revelação do próximo"},
+    {"id":"glow_atom","name":"Glow Atom","best_for":"conceitos microscópicos e ciência","route":"Canvas/Three.js","motion":"partículas e órbitas didáticas, sem escala falsa"},
+    {"id":"dark_ui_cursor","name":"Dark UI Cursor","best_for":"demonstrações de interface e automação","route":"HTML/CSS/JS com captura determinística","motion":"cursor arrasta objetos em grid escuro; identidade e marcas fictícias"}
+  ],
+  "additional_exploration": ["woodblock_print","pixel_art","noir_comic","1930s_cartoon","brick_toy","clay_diorama","crt_vector","knitted_puppet","ps2_style","sumi_ink","hologram","cyberpunk_neon","blueprint","thermal_cam","anime_cel","ascii_terminal","watercolor","claymation"],
+  "reference_note": "Nomes e categorias foram inspirados pelas cinco imagens fornecidas pelo usuário; prompts acima são originais e não foram copiados de uma fonte externa."
+}

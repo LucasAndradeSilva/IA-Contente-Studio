@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.1.0",
+  "pipeline_id": "fatonauta-youtube-shorts-v1",
+  "channel_spec": "channels/fatonauta-youtube/specifications.md",
+  "default_manifest": "config/pilot_bunker.json",
+  "state_semantics": "pipeline_state registra o ultimo marco aprovado. Para avancar, o papel owner_role do proximo estado produz o output e o Orquestrador so altera o manifesto apos verificar o gate e registrar a evidencia.",
+  "handoff_rule": {
+    "self_review_required": true,
+    "review_record_fields": ["checked", "fixes", "evidence", "open_blockers", "result"],
+    "advance_only_when": "auto-revisao aprovada, revisao independente quando prevista e gate do Orquestrador aprovado",
+    "blocked_result": "manter pipeline_state e devolver ao papel responsavel pela correcao"
+  },
+  "mvp_terminal_state": "qa_passed",
+  "publication_requires_explicit_authorization": true,
+  "visual_style_catalog": "config/visual_styles.json",
+  "side_workflows": [
+    {"id":"editorial_calendar","owner_role":14,"output":"calendário proposto","external_scheduling_requires_authorization":true},
+    {"id":"comment_drafts","owner_role":13,"output":"respostas em rascunho","requires_public_reply_authorization":true}
+  ],
+  "states": [
+    {"id": "draft", "owner_role": 1, "output": "manifesto inicial", "next": "brief_approved"},
+    {"id": "brief_approved", "owner_role": 4, "output": "briefing editorial", "next": "research_approved"},
+    {"id": "research_approved", "owner_role": 5, "output": "pacote de fontes e afirmações", "next": "script_approved"},
+    {"id": "script_approved", "owner_role": 6, "review_role": 15, "output": "roteiro cronometrado, storyboard e estilos sugeridos", "next": "visual_approved"},
+    {"id": "visual_approved", "owner_role": 7, "output": "plano visual, estilo escolhido por cena e inventário de ativos", "next": "media_ready"},
+    {"id": "media_ready", "owner_role": 8, "output": "cenas e ativos normalizados", "next": "audio_ready"},
+    {"id": "audio_ready", "owner_role": 9, "output": "narração, mix e legendas", "next": "edit_ready"},
+    {"id": "edit_ready", "owner_role": 8, "output": "MP4 candidato e arquivos de origem", "next": "qa_passed"},
+    {"id": "qa_passed", "owner_role": 11, "output": "relatório de validação", "next": "packaging_ready"},
+    {"id": "packaging_ready", "owner_role": 12, "output": "título e thumbnail aprovados", "next": "metadata_ready"},
+    {"id": "metadata_ready", "owner_role": 10, "output": "pacote de metadados", "next": "publish_authorized"},
+    {"id": "publish_authorized", "owner_role": 1, "output": "autorização registrada", "next": "published"},
+    {"id": "published", "owner_role": 10, "output": "URL e configurações confirmadas", "next": "metrics_reviewed"},
+    {"id": "metrics_reviewed", "owner_role": 11, "review_role": 15, "output": "relatório de desempenho e hipóteses", "next": null}
+  ]
+}

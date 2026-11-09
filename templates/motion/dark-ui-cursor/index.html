@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FatoNauta — demonstração de interface</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+    body { background: #080e1e; color: #f5f4ee; font: 600 34px system-ui, sans-serif; }
+    .stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background:
+      linear-gradient(#ffffff0b 1px, transparent 1px),
+      linear-gradient(90deg, #ffffff0b 1px, transparent 1px),
+      radial-gradient(circle at 50% 38%, #123654 0%, #080e1e 60%);
+      background-size: 80px 80px, 80px 80px, auto; }
+    .heading { position: absolute; top: 220px; left: 90px; right: 90px; text-align: center; font-size: 58px; }
+    .sub { margin-top: 20px; color: #62d6ef; font-size: 29px; }
+    .window { position: absolute; left: 100px; top: 520px; width: 880px; height: 800px; border: 2px solid #56718c;
+      border-radius: 38px; background: #0e1930ee; box-shadow: 0 30px 100px #0008; }
+    .bar { height: 88px; border-bottom: 2px solid #314259; padding: 27px 36px; color: #9db1c1; font-size: 28px; }
+    .file, .bin { position: absolute; width: 195px; height: 175px; border: 2px solid #4b718a; border-radius: 24px;
+      display: grid; place-items: center; text-align: center; font-size: 27px; }
+    .file { left: 100px; top: 245px; background: #173853; color: #e7f7fb; z-index: 2; }
+    .file svg, .bin svg { width: 76px; height: 76px; display: block; margin: auto auto 7px; }
+    .bin { right: 100px; top: 245px; background: #43251f; border-color: #e7844d; color: #f2b795; }
+    .cursor { position: absolute; left: 292px; top: 415px; width: 58px; height: 70px; z-index: 4;
+      filter: drop-shadow(0 4px 5px #000); }
+    .status { position: absolute; top: 660px; width: 100%; text-align: center; color: #62d6ef; font-size: 32px; opacity: 0; }
+    .footer { position: absolute; left: 0; right: 0; bottom: 190px; text-align: center; color: #a8b9c5; font-size: 28px; }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <div class="heading">Uma ação, uma consequência<div class="sub">Demonstração visual de fluxo</div></div>
+    <section class="window">
+      <div class="bar">FATONAUTA / INTERFACE DEMO</div>
+      <div class="file" id="file"><div><svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><path d="M18 5h30l14 15v54H18z" stroke="#62d6ef" stroke-width="5"/><path d="M48 5v17h14" stroke="#62d6ef" stroke-width="5"/></svg>Arquivo</div></div>
+      <div class="bin"><div><svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><path d="M20 24h40M28 24l3 47h18l3-47M31 17h18" stroke="#f5a46f" stroke-width="5" stroke-linecap="round"/></svg>Lixeira</div></div>
+      <svg class="cursor" id="cursor" viewBox="0 0 58 70" aria-hidden="true"><path d="M4 3v56l15-14 11 21 10-5-11-21 21-2z" fill="#f5f4ee" stroke="#09101d" stroke-width="5"/></svg>
+      <div class="status" id="status">Movido</div>
+    </section>
+    <div class="footer">FATONAUTA · EXPLORAR, ENTENDER, DESCOBRIR</div>
+  </main>
+  <script>
+    const file = document.getElementById('file');
+    const cursor = document.getElementById('cursor');
+    const status = document.getElementById('status');
+    function renderAt(seconds) {
+      const t = Math.max(0, Math.min(1, (seconds - 1) / 2));
+      const smooth = t * t * (3 - 2 * t);
+      const x = 430 * smooth;
+      file.style.transform = `translateX(${x}px)`;
+      cursor.style.transform = `translate(${x}px, ${-65 * Math.sin(Math.PI * t)}px)`;
+      file.style.opacity = seconds >= 3.25 ? '0' : '1';
+      status.style.opacity = seconds >= 3.25 ? '1' : '0';
+    }
+    // Captura determinística: renderAt(tempoEmSegundos) pode ser chamada pelo renderizador.
+    window.renderAt = renderAt;
+    renderAt(0);
+  </script>
+</body>
+</html>
