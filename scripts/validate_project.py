@@ -15,16 +15,21 @@ def load_json(relative_path: str) -> dict:
 def validate_pilot(pilot: dict) -> list[str]:
     errors: list[str] = []
     canvas = pilot.get("canvas", {})
-    if (canvas.get("width"), canvas.get("height")) != (1080, 1920):
-        errors.append("O canvas deve ser 1080x1920.")
-    if pilot.get("duration_seconds") != 30:
-        errors.append("O piloto deve ter 30 segundos.")
+    width, height = canvas.get("width"), canvas.get("height")
+    if not all(isinstance(value, int) and value > 0 for value in (width, height)) or width >= height:
+        errors.append("O canvas deve ser vertical e ter dimensoes positivas.")
+    duration = pilot.get("duration_seconds")
+    if not isinstance(duration, (int, float)) or isinstance(duration, bool) or duration <= 0:
+        errors.append("A duracao deve ser positiva.")
     if pilot.get("publication_enabled") is not False:
         errors.append("A publicacao deve permanecer desativada no MVP.")
     if pilot.get("external_generation_enabled") is not False:
         errors.append("Geracao externa deve permanecer desativada no MVP.")
     if pilot.get("acceptance", {}).get("publish") is not False:
         errors.append("O aceite do MVP nao pode incluir publicacao.")
+    acceptance = pilot.get("acceptance", {})
+    if (acceptance.get("width"), acceptance.get("height"), acceptance.get("duration_seconds")) != (width, height, duration):
+        errors.append("O aceite deve repetir canvas e duracao declarados.")
 
     timeline = pilot.get("timeline", [])
     cursor = 0
@@ -41,7 +46,7 @@ def validate_pilot(pilot: dict) -> list[str]:
             continue
         cursor = scene["end"]
 
-    if cursor != pilot.get("duration_seconds"):
+    if cursor != duration:
         errors.append("A linha do tempo nao termina na duracao declarada.")
     return errors
 
@@ -63,20 +68,19 @@ def validate_pipeline(pipeline: dict, pilot: dict, agent_ids: list[int]) -> list
         errors.append("O MVP deve terminar no gate de qualidade.")
     if pipeline.get("publication_requires_explicit_authorization") is not True:
         errors.append("O pipeline deve exigir autorizacao explicita para publicacao.")
-    handoff = pipeline.get("handoff_rule", {})
-    if handoff.get("self_review_required") is not True:
-        errors.append("Cada etapa deve exigir auto-revisao antes da passagem.")
-    required_review_fields = {"checked", "fixes", "evidence", "open_blockers", "result"}
-    if not required_review_fields.issubset(set(handoff.get("review_record_fields", []))):
-        errors.append("O registro de auto-revisao esta incompleto.")
+    execution = pipeline.get("execution_policy", {})
+    if execution.get("mode") != "single_pass" or execution.get("generic_self_review_reports") is not False:
+        errors.append("O pipeline deve usar passagem direta sem relatorios genericos de auto-revisao.")
+    if execution.get("single_visual_system_per_video") is not True:
+        errors.append("O pipeline deve exigir um unico sistema visual por video.")
     for state in states:
         next_state = state.get("next")
         if next_state is not None and next_state not in state_by_id:
             errors.append(f"Estado {state.get('id')}: proxima transicao inexistente.")
         if state.get("owner_role") not in agent_ids:
             errors.append(f"Estado {state.get('id')}: papel responsavel invalido.")
-        if state.get("review_role") is not None and state["review_role"] not in agent_ids:
-            errors.append(f"Estado {state.get('id')}: papel revisor invalido.")
+        if state.get("consult_role") is not None and state["consult_role"] not in agent_ids:
+            errors.append(f"Estado {state.get('id')}: papel consultor invalido.")
         if not state.get("output"):
             errors.append(f"Estado {state.get('id')}: artefato de saida ausente.")
 
@@ -95,8 +99,8 @@ def validate_pipeline(pipeline: dict, pilot: dict, agent_ids: list[int]) -> list
 
 def main() -> int:
     context = load_json("docs/contexto_projeto.json")
-    pilot = load_json("config/pilot_bunker.json")
     pipeline = load_json("config/pipeline_fatonauta.json")
+    pilot = load_json(pipeline["default_manifest"])
     errors = validate_pilot(pilot)
 
     agent_ids = [agent.get("id") for agent in context.get("agents", [])]
@@ -108,20 +112,20 @@ def main() -> int:
         contracts = list((ROOT / ".agents" / "roles").glob(f"{agent_id:02d}-*.md"))
         if len(contracts) != 1:
             errors.append(f"Papel {agent_id}: contrato Markdown ausente ou duplicado.")
-        elif "## Auto-revisão antes da passagem" not in contracts[0].read_text(encoding="utf-8"):
-            errors.append(f"Papel {agent_id}: regra de auto-revisao ausente.")
 
     styles = load_json("config/visual_styles.json")
     style_ids = [style.get("id") for style in styles.get("styles", [])]
     if len(style_ids) != len(set(style_ids)) or len(style_ids) < 9:
         errors.append("O catalogo visual requer ao menos nove estilos com IDs unicos.")
-    candidate_ids = pilot.get("visual_style_selection", {}).get("candidates", [])
-    if any(candidate not in style_ids for candidate in candidate_ids):
-        errors.append("O piloto referencia estilo visual desconhecido.")
-    selected = pilot.get("visual_style_selection", {}).get("selected_by_scene", [])
-    if any(item.get("style_id") not in style_ids or item.get("scene") not in range(1, len(pilot.get("timeline", [])) + 1)
-           for item in selected if isinstance(item, dict)) or any(not isinstance(item, dict) for item in selected):
-        errors.append("A selecao visual por cena referencia estilo ou cena desconhecidos.")
+    visual = pilot.get("visual_style_selection", {})
+    if visual.get("visual_system_id") not in style_ids:
+        errors.append("O piloto referencia sistema visual desconhecido.")
+    engines = load_json("config/render_engines.json")
+    engine_ids = [engine.get("id") for engine in engines.get("engines", [])]
+    if len(engine_ids) != len(set(engine_ids)) or not engine_ids:
+        errors.append("O catalogo de motores precisa de IDs unicos.")
+    if any(engine not in engine_ids for engine in visual.get("engine_candidates", [])):
+        errors.append("O piloto referencia motor de render desconhecido.")
 
     errors.extend(validate_pipeline(pipeline, pilot, agent_ids))
 

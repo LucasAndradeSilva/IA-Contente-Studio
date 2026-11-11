@@ -4,14 +4,14 @@
 
 O fluxo é uma linha de produção com gates. `pipeline_state` indica o último marco aprovado. O papel `owner_role` do próximo estado produz o artefato indicado em `output`; o Orquestrador só registra esse novo estado após verificar o gate e guardar a evidência. Os demais papéis trabalham apenas quando acionados.
 
-Cada papel confere a própria entrega antes de repassá-la: compara com as entradas e o contrato, verifica o gate e a segurança, corrige erros e revisa novamente. O registro de passagem contém verificações, correções, evidências, bloqueios abertos e resultado (`aprovado` ou `bloqueado`). Resultado bloqueado mantém o estado anterior. Quando houver `review_role`, sua revisão vem depois da auto-revisão; o Orquestrador faz a conferência final do gate antes de chamar o próximo papel.
+Cada papel entrega diretamente seu artefato. A V2 remove relatórios repetitivos de auto-revisão e ciclos genéricos de aprovação. As duas conferências obrigatórias são fontes antes do roteiro e propriedades técnicas do MP4 final. Falhas concretas voltam ao responsável.
 
 ```text
 ideia/manifesto
   → briefing
   → pesquisa factual
   → roteiro + storyboard + revisão de alcance
-  → escolha visual por cena
+  → sistema visual único + plano de cenas
   → cenas
   → áudio + legendas
   → montagem
@@ -22,11 +22,11 @@ ideia/manifesto
   → métricas e aprendizado
 ```
 
-No MVP do bunker, o fluxo termina em **qualidade**. Metadados podem ser preparados como rascunho, mas não há upload ou publicação automática.
+No MVP atual do bunker V2, o fluxo termina na conferência técnica local. Metadados podem ser preparados como rascunho, mas não há upload ou publicação automática.
 
 O planejador editorial mantém uma proposta de calendário à parte. Depois que houver comentários, o gestor de comunidade prepara rascunhos de resposta. Agendamento e respostas públicas dependem de autorização específica.
 
-O roteiro consulta `config/visual_styles.json` e sugere um estilo por cena; a direção visual escolhe e justifica técnica, custo, legibilidade e licença. HTML/CSS/JS, Canvas, SVG e Three.js são rotas possíveis para animação reproduzível. As imagens de referência fornecidas pelo usuário mostram categorias de estilo, não prompts completos; o catálogo contém prompts originais.
+O roteiro consulta `config/visual_styles.json` e sugere famílias para o vídeo inteiro. A direção visual escolhe um sistema único e define foco e movimento por cena. HTML/CSS/JS, Canvas, SVG, Three.js e Blender são rotas possíveis. GPT-6 Astra executa os papéis criativos; o motor selecionado renderiza a mídia.
 
 ## Artefatos por vídeo
 
@@ -62,10 +62,9 @@ Os arquivos pesados podem permanecer fora do versionamento, mas seus nomes, hash
 | Título não entregue pelo vídeo | SEO |
 | Métrica ausente | Aguardar dado oficial; não estimar como real |
 
-## Primeiro ciclo
+## Estado do primeiro ciclo
 
-1. Aprovar o briefing do bunker.
-2. Criar o pacote factual com fontes primárias.
-3. Fechar narração e storyboard de 30 segundos.
-4. Definir uma solução visual leve para o notebook.
-5. Confirmar as ferramentas locais e produzir o primeiro render de teste.
+1. Briefing e pesquisa factual do El Niño registrados.
+2. Roteiro e storyboard auto-revisados e aprovados pelo Estrategista de Alcance.
+3. Animação 2D e áudio local renderizados; MP4 com legendas montado.
+4. QA técnico passou; escuta e sincronismo fino das legendas ainda impedem `qa_passed`.

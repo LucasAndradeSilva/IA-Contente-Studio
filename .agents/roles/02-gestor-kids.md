@@ -20,7 +20,3 @@ Preservar identidade, adequação etária, personagens e regras de conteúdo inf
 ## Gate
 
 Público, objetivo educativo, segurança infantil e direitos de personagens, vozes e músicas estão explícitos.
-
-## Auto-revisão antes da passagem
-
-Revise a entrega contra as entradas, este contrato, o gate e as regras de segurança. Corrija os erros encontrados e revise novamente. Registre verificações, correções, evidências, bloqueios abertos e resultado. Se o resultado for bloqueado, não repasse a etapa como aprovada; informe o Orquestrador. A auto-revisão não substitui a revisão independente nem a autorização humana quando exigidas.

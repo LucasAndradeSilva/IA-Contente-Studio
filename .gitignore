@@ -10,4 +10,6 @@ outputs/*
 assets/generated/
 assets/voices/**/*.onnx
 logs/
+node_modules/
+work/render-frames/
 

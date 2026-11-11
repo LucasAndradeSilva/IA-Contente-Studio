@@ -19,8 +19,4 @@ Produzir, organizar e normalizar os ativos visuais previstos no plano aprovado.
 
 ## Gate
 
-Todos os ativos abrem, correspondem ao storyboard, respeitam 1080 × 1920 e possuem rastreabilidade.
-
-## Auto-revisão antes da passagem
-
-Revise a entrega contra as entradas, este contrato, o gate e as regras de segurança. Corrija os erros encontrados e revise novamente. Registre verificações, correções, evidências, bloqueios abertos e resultado. Se o resultado for bloqueado, não repasse a etapa como aprovada; informe o Orquestrador. A auto-revisão não substitui a revisão independente nem a autorização humana quando exigidas.
+Todos os ativos abrem, correspondem ao storyboard, respeitam as dimensões do manifesto ativo e possuem rastreabilidade.

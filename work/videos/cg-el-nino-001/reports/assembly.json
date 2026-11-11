@@ -1,0 +1,12 @@
+{
+  "video_id": "cg-el-nino-001",
+  "mode": "local_only",
+  "visual_input": "outputs/cg-el-nino-001/video/visual_only.mp4",
+  "audio_input": "outputs/cg-el-nino-001/audio/mix.wav",
+  "captions_input": "work/videos/cg-el-nino-001/captions/voice.srt",
+  "captions_rendered": "work/videos/cg-el-nino-001/captions/voice.ass",
+  "caption_alignment": "SRT por fala medido; trechos longos subdivididos proporcionalmente ao número de palavras, sujeitos a revisão visual.",
+  "output": "outputs/cg-el-nino-001/video/pilot_local.mp4",
+  "sha256": "03817a0f17457471558f94112b5ff8cf19ae541d483e50bff0bfe19b102549c7",
+  "size_bytes": 1115340
+}

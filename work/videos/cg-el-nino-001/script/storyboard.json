@@ -1,0 +1,18 @@
+{
+  "video_id": "cg-el-nino-001",
+  "status": "approved_for_local_production",
+  "scenes": [
+    {"scene": 1, "start": 0, "end": 3, "voice": "El Niño: e a sua cidade?", "visual": "Cidade original em camadas; chuva, calor e seca aparecem como possibilidades, sem mapa regional.", "caption": "EL NIÑO: E A SUA CIDADE?", "style_candidate": "paper_cut", "claims": ["C2"]},
+    {"scene": 2, "start": 3, "end": 10, "voice": "Primeiro, veja os avisos oficiais. Envie seu CEP por SMS para receber alertas da Defesa Civil.", "visual": "Cartão de interface fictícia, marcado Exemplo, com SEU CEP → 40199. Nenhum CEP real ou logo oficial.", "caption": "AVISOS OFICIAIS · SMS: CEP → 40199", "style_candidate": "dark_ui_cursor", "claims": ["C3", "C4"]},
+    {"scene": 3, "start": 10, "end": 17, "voice": "Chuva forte, calor e seca pedem cuidados diferentes. Confira o risco e as orientações para sua cidade.", "visual": "Três cartões chuva, calor e seca; destaque alternado; sem afirmar previsão municipal.", "caption": "O RISCO MUDA CONFORME O LOCAL", "style_candidate": "paper_cut", "claims": ["C2", "C5"]},
+    {"scene": 4, "start": 17, "end": 24, "voice": "Em alerta de enchente, conheça a rota de saída e nunca atravesse áreas alagadas.", "visual": "Água bloqueando uma passagem genérica; sinal de rota local sem desenho de caminho real.", "caption": "ENCHENTE: EVITE ÁREAS ALAGADAS", "style_candidate": "paper_cut", "claims": ["C3", "C5"]},
+    {"scene": 5, "start": 24, "end": 30, "voice": "No calor, hidrate-se. Em qualquer caso, siga a Defesa Civil da sua região.", "visual": "Sol e água; alerta local neutro; sem imitar marca oficial.", "caption": "SIGA O AVISO DA SUA CIDADE", "style_candidate": "paper_cut", "claims": ["C5", "C3"]}
+  ],
+  "self_review": {
+    "checked": ["gancho inicial", "uma ideia principal", "fontes por cena", "ressalva local", "duração editorial"],
+    "fixes": ["40199 transferido para a tela", "CTA promocional removido", "cena de enchente simplificada"],
+    "evidence": ["work/videos/cg-el-nino-001/research/sources.json", "work/videos/cg-el-nino-001/reports/audio_timing.json"],
+    "open_blockers": [],
+    "result": "approved"
+  }
+}

@@ -15,7 +15,8 @@ SPEC.loader.exec_module(MODULE)
 
 class PilotValidationTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.pilot = MODULE.load_json("config/pilot_bunker.json")
+        pipeline = MODULE.load_json("config/pipeline_fatonauta.json")
+        self.pilot = MODULE.load_json(pipeline["default_manifest"])
 
     def test_current_manifest_is_valid(self) -> None:
         self.assertEqual(MODULE.validate_pilot(self.pilot), [])
@@ -30,6 +31,12 @@ class PilotValidationTests(unittest.TestCase):
         changed["timeline"][1]["start"] = 4
         self.assertTrue(any("lacuna" in error for error in MODULE.validate_pilot(changed)))
 
+    def test_rejects_landscape_canvas(self) -> None:
+        changed = copy.deepcopy(self.pilot)
+        changed["canvas"]["width"] = 1280
+        changed["canvas"]["height"] = 720
+        self.assertTrue(any("vertical" in error for error in MODULE.validate_pilot(changed)))
+
     def test_pipeline_gates_are_valid(self) -> None:
         pipeline = MODULE.load_json("config/pipeline_fatonauta.json")
         self.assertEqual(MODULE.validate_pipeline(pipeline, self.pilot, list(range(1, 16))), [])
@@ -40,11 +47,11 @@ class PilotValidationTests(unittest.TestCase):
         errors = MODULE.validate_pipeline(pipeline, self.pilot, list(range(1, 16)))
         self.assertTrue(any("autorizacao" in error for error in errors))
 
-    def test_rejects_pipeline_without_self_review(self) -> None:
+    def test_rejects_pipeline_with_generic_self_review(self) -> None:
         pipeline = MODULE.load_json("config/pipeline_fatonauta.json")
-        pipeline["handoff_rule"]["self_review_required"] = False
+        pipeline["execution_policy"]["generic_self_review_reports"] = True
         errors = MODULE.validate_pipeline(pipeline, self.pilot, list(range(1, 16)))
-        self.assertTrue(any("auto-revisao" in error for error in errors))
+        self.assertTrue(any("passagem direta" in error for error in errors))
 
 
 if __name__ == "__main__":

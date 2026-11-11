@@ -1,0 +1,47 @@
+{
+  "video_id": "cg-el-nino-001",
+  "engine": "Piper 1.8.0",
+  "mode": "local_only",
+  "scenes": [
+    {
+      "scene": 1,
+      "duration_seconds": 1.625,
+      "slot_seconds": 3,
+      "fits_slot": true,
+      "file": "outputs/cg-el-nino-001/audio/scene_01.wav",
+      "sha256": "0b7be216f2f985ec7a96afa575794ef2ed3c903abb3bafb8d3b7c0191daddbde"
+    },
+    {
+      "scene": 2,
+      "duration_seconds": 5.77,
+      "slot_seconds": 7,
+      "fits_slot": true,
+      "file": "outputs/cg-el-nino-001/audio/scene_02.wav",
+      "sha256": "945ea2ee41645962b6e0bcdc85efaea4b8eed1a4d61a71eda430d78264771559"
+    },
+    {
+      "scene": 3,
+      "duration_seconds": 6.13,
+      "slot_seconds": 7,
+      "fits_slot": true,
+      "file": "outputs/cg-el-nino-001/audio/scene_03.wav",
+      "sha256": "123e7f6c2a2083044c22db2cbf726877013e6258b1b00cae8e1d29e835c2f505"
+    },
+    {
+      "scene": 4,
+      "duration_seconds": 4.667,
+      "slot_seconds": 7,
+      "fits_slot": true,
+      "file": "outputs/cg-el-nino-001/audio/scene_04.wav",
+      "sha256": "f38086e86893f7f09f38e503f3bee6afcdc9fcaeb05d5092947843c61768162e"
+    },
+    {
+      "scene": 5,
+      "duration_seconds": 4.54,
+      "slot_seconds": 6,
+      "fits_slot": true,
+      "file": "outputs/cg-el-nino-001/audio/scene_05.wav",
+      "sha256": "a7d1d5076e6daf52a3aee0bba194fc156164ff2495a67a735cda852fdffbb221"
+    }
+  ]
+}

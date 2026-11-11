@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "video_id": "cg-cafe-v2-001",
+  "pipeline_id": "fatonauta-youtube-shorts-v1",
+  "pipeline_state": "script_approved",
+  "status": "engine_comparison",
+  "topic": "Por que o café fica amargo?",
+  "prototype_goal": "Escolher o motor visual para a V2 antes de produzir o vídeo integral.",
+  "canvas": {"width":720,"height":1280,"fps":30},
+  "duration_seconds": 8,
+  "full_target_duration_seconds": 97,
+  "publication_enabled": false,
+  "external_generation_enabled": false,
+  "visual_style_selection": {"visual_system_id":"toy_3d_explainer","single_visual_system":true,"engine_candidates":["css_3d_html","threejs_webgl","blender_eevee"],"selected_engine":null},
+  "timeline": [
+    {"scene":1,"start":0,"end":3,"narration":"Sabe por que seu café fica amargo?","visual":"Caneca central e vapor; interrogação surge atrás."},
+    {"scene":2,"start":3,"end":5,"narration":"Não é só o pó.","visual":"Pacote de café entra e recebe um sinal de negação."},
+    {"scene":3,"start":5,"end":8,"narration":"É o que você faz com ele.","visual":"Chaleira inclina sobre o filtro e o acento neon percorre o fluxo."}
+  ],
+  "source_status": "Protótipo visual; afirmações do vídeo integral precisam de verificação antes do roteiro final.",
+  "acceptance": {"width":720,"height":1280,"duration_seconds":8,"same_script_across_engines":true,"same_visual_system_across_engines":true,"publish":false}
+}

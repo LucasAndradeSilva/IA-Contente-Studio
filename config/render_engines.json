@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "selection_rule": "Comparar um trecho curto com o mesmo roteiro e sistema visual; escolher um motor antes do render integral.",
+  "engines": [
+    {"id":"css_3d_html","name":"HTML/CSS 3D","strength":"rápido para tipografia, UI e objetos geométricos simples","license":"tecnologias web abertas; verificar bibliotecas adicionais","deterministic_entrypoint":"window.renderAt(seconds)"},
+    {"id":"threejs_webgl","name":"Three.js","strength":"3D programável no navegador com boa reutilização","license":"MIT","deterministic_entrypoint":"window.renderAt(seconds)"},
+    {"id":"blender_eevee","name":"Blender Eevee","strength":"3D completo, luz, materiais e câmera","license":"Blender GPL; a obra renderizada permanece do autor, respeitando licenças dos ativos","deterministic_entrypoint":"frame_set(frame)"},
+    {"id":"blender_workbench","name":"Blender Workbench / Studio","strength":"3D nativo com materiais, luz de estúdio, sombras e oclusão; adequado à maquete low-poly no notebook","license":"Blender GPL; ativos originais deste projeto","deterministic_entrypoint":"frame_set(frame)","note":"Motor usado na comparação completa do bunker V2; não é Eevee ou Cycles."},
+    {"id":"motion_canvas_2d","name":"Motion Canvas","strength":"diagramas e motion graphics 2D sincronizados","license":"MIT","deterministic_entrypoint":"timeline"},
+    {"id":"remotion_react","name":"Remotion","strength":"vídeo em React com ecossistema amplo","license":"licença gratuita depende do tamanho e uso da organização; conferir antes de uso comercial","deterministic_entrypoint":"frame"},
+    {"id":"python_pillow","name":"Python/Pillow","strength":"fallback determinístico para composição simples","license":"Pillow HPND","deterministic_entrypoint":"frame_index"}
+  ],
+  "prototype_set": {"video_id":"cg-cafe-v2-001","duration_seconds":8,"engines":["css_3d_html","threejs_webgl","blender_eevee"]},
+  "full_comparison_set": {"video_id":"cg-bunker-v2-001","duration_seconds":30,"engines":["css_3d_html","threejs_webgl","blender_workbench"],"rule":"Cada variante é um vídeo completo; manter mesmo roteiro e áudio."}
+}

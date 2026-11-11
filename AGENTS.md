@@ -2,7 +2,7 @@
 
 ## Objetivo atual
 
-Construir e homologar uma fábrica de vídeos curtos com IA, começando por um único piloto de Conhecimentos Gerais: vídeo vertical de 30 segundos sobre como funcionaria um bunker subterrâneo.
+Construir e homologar uma fábrica de vídeos curtos com IA. Pedido atual: retomar o bunker na V2, com GPT-6 Astra conduzindo os papéis e um sistema visual 3D único. Manifesto ativo: `config/pilot_bunker_v2.json`, vertical 720 × 1280, 30 s. El Niño V1 e café permanecem como histórico e experimentos anteriores.
 
 ## Ordem de homologação
 
@@ -53,7 +53,7 @@ Os onze primeiros preservam a arquitetura anterior; os papéis 12 a 15 foram acr
 
 ## Critério do piloto
 
-O piloto só passa quando houver um MP4 1080 × 1920, 30 s, com roteiro, cenas, narração, trilha/efeitos licenciados, legendas sincronizadas, áudio inteligível, arquivos de origem e relatório de validação. A publicação fica fora do primeiro gate.
+O piloto V2 usa MP4 720 × 1280, 30 s, conforme o manifesto ativo, com roteiro, cenas, narração, trilha/efeitos de origem registrada, legendas sincronizadas, áudio inteligível, arquivos de origem e conferência técnica final. A restrição de teste local da Faber continua aplicável. A publicação fica fora do primeiro gate.
 
 ## Forma de trabalho
 
@@ -67,6 +67,8 @@ O piloto só passa quando houver um MP4 1080 × 1920, 30 s, com roteiro, cenas, 
 - Usar `config/pipeline_fatonauta.json` como máquina de estados do piloto.
 - Em modo de simulação, não chamar serviços externos.
 - Validar JSON e testes locais antes de avançar.
+- Cada vídeo usa uma única família visual em todas as cenas. A variação ocorre nos objetos, enquadramentos e dados, não na identidade do vídeo.
+- Protótipos A/B podem renderizar o mesmo trecho em motores diferentes; após a escolha, o vídeo completo usa apenas o motor selecionado.
 
 ## Precedência das fontes
 
@@ -76,5 +78,5 @@ Quando houver conflito, aplicar esta ordem: regras de segurança deste arquivo, 
 
 Os quinze papéis não ficam ativos ao mesmo tempo. O Orquestrador seleciona o próximo estado, carrega apenas os contratos necessários, exige o artefato de saída e registra o resultado. Uma etapa reprovada retorna ao papel que pode corrigir a causa; não se mascara uma falha em uma etapa posterior. Respostas a comentários, agendamento e publicação externa exigem autorização específica.
 
-Antes de entregar sua demanda, cada papel deve revisar o próprio artefato contra as entradas, seu contrato, o gate da etapa e as regras de segurança. Deve corrigir os erros encontrados e repetir a revisão. A entrega inclui um registro curto do que foi conferido, correções feitas, evidências e pendências. Se houver erro ou pendência que impeça o gate, o papel informa o bloqueio e não marca a etapa como aprovada. Só após a auto-revisão aprovada o Orquestrador verifica o gate e aciona o próximo papel. A auto-revisão não substitui revisão independente prevista no pipeline nem autorização humana para ações externas.
+O fluxo é enxuto: cada papel produz seu artefato uma vez e o entrega ao próximo, sem relatório de auto-revisão, votação entre agentes ou ciclos de confirmação genéricos. Só existem duas conferências obrigatórias: pesquisa factual antes do roteiro e verificação técnica do MP4 final. Uma falha concreta volta diretamente ao papel capaz de corrigi-la. Autorização humana continua obrigatória para gasto, upload, publicação, resposta pública e agendamento externo.
 

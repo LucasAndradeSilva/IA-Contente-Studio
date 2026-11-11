@@ -10,18 +10,14 @@ Converter o pacote factual em narração cronometrada e cenas que expliquem uma 
 
 ## Saídas
 
-- Texto de voz, contagem de palavras, marcações de tempo, storyboard, mapa entre afirmações e fontes e estilo visual sugerido por cena com justificativa.
+- Texto de voz, contagem de palavras, marcações de tempo, storyboard, mapa entre afirmações e fontes e requisitos visuais de cada cena. Não escolhe um estilo diferente por cena.
 
 ## Limites
 
 - Não adiciona números ou explicações sem apoio da pesquisa.
 - Separa fato, estimativa, hipótese e dramatização.
-- Consulta `config/visual_styles.json`; sugere estilos que esclareçam a ideia, sem imitar o visual de um criador específico.
+- Consulta `config/visual_styles.json`; sugere até três famílias candidatas para o vídeo inteiro, sem imitar marca, personagem ou composição exclusiva de outro criador.
 
 ## Gate
 
-Gancho em até 3 segundos, duração estimada compatível, uma ideia principal e cada cena contribuindo para a explicação.
-
-## Auto-revisão antes da passagem
-
-Revise a entrega contra as entradas, este contrato, o gate e as regras de segurança. Corrija os erros encontrados e revise novamente. Registre verificações, correções, evidências, bloqueios abertos e resultado. Se o resultado for bloqueado, não repasse a etapa como aprovada; informe o Orquestrador. A auto-revisão não substitui a revisão independente nem a autorização humana quando exigidas.
+Gancho em até 3 segundos, duração estimada compatível, uma ideia ou dado por cena e cada cena contribuindo para a explicação.

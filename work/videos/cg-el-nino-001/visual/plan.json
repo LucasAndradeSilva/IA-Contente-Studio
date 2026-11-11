@@ -1,0 +1,23 @@
+{
+  "video_id": "cg-el-nino-001",
+  "status": "prototype_verified_for_handoff",
+  "canvas": {"width": 1080, "height": 1920, "fps": 30},
+  "style_by_scene": [
+    {"scene": 1, "style_id": "paper_cut", "reason": "cidade e fenômenos em camadas legíveis"},
+    {"scene": 2, "style_id": "dark_ui_cursor", "reason": "demonstração clara do SMS em interface fictícia"},
+    {"scene": 3, "style_id": "paper_cut", "reason": "riscos como cartões condicionais sem previsão municipal"},
+    {"scene": 4, "style_id": "paper_cut", "reason": "contraste entre água e passagem bloqueada"},
+    {"scene": 5, "style_id": "paper_cut", "reason": "fechamento coerente com o aviso local"}
+  ],
+  "palette": {"navy": "#07172e", "cyan": "#36d5eb", "orange": "#f69b44", "cream": "#f4efe2"},
+  "safe_area": "Elementos-chave entre y=180 e 1450; legendas entre y=1450 e 1650; preservar margem direita e rodapé da plataforma.",
+  "assets": "Vetores e formas originais em código; sem fotos, pessoas, mapas de previsão, logos oficiais ou serviços externos.",
+  "render_route": "Animação 2D determinística com render local e FFmpeg; sem Blender necessário.",
+  "self_review": {
+    "checked": ["legibilidade vertical", "identidade FatoNauta", "ausência de falsa previsão local", "hardware e custo"],
+    "fixes": ["mapa regional e rota de fuga específica removidos"],
+    "evidence": ["config/visual_styles.json", "channels/fatonauta-youtube/specifications.md"],
+    "open_blockers": [],
+    "result": "approved_for_local_handoff"
+  }
+}

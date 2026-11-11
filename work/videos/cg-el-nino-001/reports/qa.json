@@ -1,0 +1,40 @@
+{
+  "video_id": "cg-el-nino-001",
+  "file": "outputs/cg-el-nino-001/video/pilot_local.mp4",
+  "video_sha256": "03817a0f17457471558f94112b5ff8cf19ae541d483e50bff0bfe19b102549c7",
+  "duration_seconds": 30.0,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 30.0,
+  "audio": {
+    "sample_rate": "22050",
+    "channels": 1
+  },
+  "checks": {
+    "mp4_exists": true,
+    "resolution": true,
+    "duration": true,
+    "fps": true,
+    "audio_stream": true,
+    "publication_disabled": true,
+    "sources_recorded": true,
+    "storyboard_recorded": true
+  },
+  "technical_pass": true,
+  "editorial_and_caption_review": "visual_samples_passed; listening_and_precise_caption_sync_pending",
+  "qa_gate_passed": false,
+  "publication_status": "blocked",
+  "review_findings": [
+    "Amostras das cinco cenas visuais inspecionadas; 40199 e marca Exemplo legíveis.",
+    "Amostras do MP4 final nas cenas 2 e 3 mostram legendas legíveis sem sobreposição relevante.",
+    "blackdetect não encontrou trechos pretos.",
+    "A escuta subjetiva do MP4 e o alinhamento fino das legendas ainda não foram verificados."
+  ],
+  "asr_auxiliary_review": {
+    "report": "work/videos/cg-el-nino-001/reports/asr.json",
+    "normalized_similarity": 0.96,
+    "interpretation": "A maior parte da fala foi reconhecida localmente; divergências pontuais exigem escuta. A métrica não aprova sozinha o áudio."
+  }
+}

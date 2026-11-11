@@ -1,0 +1,39 @@
+{
+  "video_id": "cg-el-nino-001",
+  "reviewed_on": "2026-11-09",
+  "status": "approved_for_script",
+  "trend_assessment": "Relevância atual apoiada em boletins oficiais recentes. Pico de buscas e potencial de viralização não foram medidos.",
+  "claims": [
+    {
+      "id": "C1", "claim": "El Niño é a fase quente do ENOS ligada ao aquecimento do Pacífico Equatorial.",
+      "source": "Ministério da Saúde", "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/e/el-nino/el-nino/"
+    },
+    {
+      "id": "C2", "claim": "O boletim do INMET de 29/10/2026 descreve um evento em curso e tendências sazonais diferentes por região; não prevê o tempo exato de cada cidade.",
+      "source": "INMET", "url": "https://portal.inmet.gov.br/noticias/painel-el-nino-boletim-de-outubro-e-divulgado"
+    },
+    {
+      "id": "C3", "claim": "Para se preparar, acompanhar avisos oficiais, conhecer áreas de risco e rotas de fuga.",
+      "source": "INMET", "url": "https://portal.inmet.gov.br/noticias/painel-el-nino-boletim-de-outubro-e-divulgado"
+    },
+    {
+      "id": "C4", "claim": "É possível cadastrar o CEP por SMS no número 40199 para receber alertas gratuitos da Defesa Civil.",
+      "source": "Ministério da Integração e do Desenvolvimento Regional / Defesa Civil", "url": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/alertas-de-desastres-1"
+    },
+    {
+      "id": "C5", "claim": "Cuidados mudam conforme o risco: seguir evacuação e evitar água de cheia na enchente; garantir água potável na seca; hidratar-se e evitar sol prolongado no calor.",
+      "source": "Ministério da Saúde", "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/e/el-nino/el-nino/"
+    }
+  ],
+  "context_source": {
+    "source": "Agência Nacional de Águas e Saneamento Básico",
+    "url": "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias/ana-apresenta-plano-de-preparacao-para-o-enfrentamento-dos-impactos-do-el-nino-2026-2027-sobre-os-recursos-hidricos-do-brasil"
+  },
+  "caveats": ["Previsões sazonais são probabilísticas.", "O risco e a orientação concreta dependem do aviso local.", "Rechecar previsões e links antes de qualquer publicação."],
+  "self_review": {
+    "checked": ["fontes oficiais", "datas", "escopo regional", "ações concretas", "alegação de tendência"],
+    "fixes": ["retirados números de intensidade desnecessários"],
+    "evidence": ["URLs oficiais associadas a cada afirmação"],
+    "open_blockers": [], "result": "approved"
+  }
+}

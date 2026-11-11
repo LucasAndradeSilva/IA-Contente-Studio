@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "pipeline_id": "fatonauta-youtube-shorts-v1",
+  "video_id": "cg-el-nino-001",
+  "status": "local_candidate_qa_pending",
+  "pipeline_state": "edit_ready",
+  "title_working": "Como se preparar para o El Niño na sua cidade?",
+  "niche": "Conhecimentos Gerais",
+  "platform_stage": "youtube_pre_publish",
+  "locale": "pt-BR",
+  "canvas": {"width": 1080, "height": 1920, "fps": 30},
+  "duration_seconds": 30,
+  "publication_enabled": false,
+  "external_generation_enabled": false,
+  "brief": "work/videos/cg-el-nino-001/brief.md",
+  "research": "work/videos/cg-el-nino-001/research/sources.json",
+  "visual_style_selection": {
+    "catalog": "config/visual_styles.json",
+    "status": "selected_and_prototyped",
+    "candidates": ["paper_cut", "isometric", "cartoon_explainer", "maths_diagram"],
+    "selected_by_scene": [
+      {"scene": 1, "style_id": "paper_cut"},
+      {"scene": 2, "style_id": "dark_ui_cursor"},
+      {"scene": 3, "style_id": "paper_cut"},
+      {"scene": 4, "style_id": "paper_cut"},
+      {"scene": 5, "style_id": "paper_cut"}
+    ]
+  },
+  "script": {
+    "word_target": {"min": 65, "max": 85},
+    "voice_text_status": "approved_and_timing_measured",
+    "voice_text_file": "work/videos/cg-el-nino-001/script/voice.txt",
+    "storyboard": "work/videos/cg-el-nino-001/script/storyboard.json"
+  },
+  "voice": {
+    "engine": "Piper 1.8.0",
+    "model": "pt_BR-faber-medium",
+    "sample_rate_hz": 22050,
+    "status": "approved_for_local_mvp_tests",
+    "upload_status": "blocked_pending_weight_license_review",
+    "commercial_release_status": "pending_weight_license_review",
+    "license_evidence": "assets/voices/piper/pt_BR-faber-medium/LICENSE_EVIDENCE.md"
+  },
+  "timeline": [
+    {"scene": 1, "start": 0, "end": 3, "purpose": "gancho", "visual": "Pergunta sobre a cidade e clima", "audio": "gancho narrado"},
+    {"scene": 2, "start": 3, "end": 10, "purpose": "aviso local", "visual": "SMS fictício com CEP para 40199", "audio": "passo prático"},
+    {"scene": 3, "start": 10, "end": 17, "purpose": "riscos", "visual": "Chuva, calor e seca em cartões separados", "audio": "cuidados condicionais"},
+    {"scene": 4, "start": 17, "end": 24, "purpose": "enchente", "visual": "Área alagada genérica sem rota específica", "audio": "evitar água e conhecer saída local"},
+    {"scene": 5, "start": 24, "end": 30, "purpose": "conclusão", "visual": "Alerta local neutro, sol e água", "audio": "hidratação e Defesa Civil"}
+  ],
+  "handoff_reviews": [
+    {
+      "state": "brief_approved", "owner_role": 4, "result": "approved",
+      "checked": ["identidade FatoNauta", "uma ideia prática", "30 segundos", "fato versus hipótese"],
+      "fixes": ["retirada generalização regional da primeira versão"],
+      "evidence": ["work/videos/cg-el-nino-001/brief.md"], "open_blockers": []
+    },
+    {
+      "state": "research_approved", "owner_role": 5, "result": "approved",
+      "checked": ["datas das fontes", "escopo regional", "ações de autoproteção", "situação atual versus tendência de buscas"],
+      "fixes": ["removidos números de intensidade desnecessários"],
+      "evidence": ["work/videos/cg-el-nino-001/research/sources.json"], "open_blockers": []
+    },
+    {
+      "state": "script_approved", "owner_role": 6, "review_role": 15, "result": "approved",
+      "checked": ["gancho", "66 palavras", "fontes por cena", "uma ideia", "revisão independente de alcance"],
+      "fixes": ["40199 mostrado em tela", "CTA promocional removido", "ação de enchente simplificada"],
+      "evidence": ["work/videos/cg-el-nino-001/script/storyboard.json", "work/videos/cg-el-nino-001/script/voice.txt", "work/videos/cg-el-nino-001/reports/audio_timing.json"],
+      "open_blockers": []
+    },
+    {
+      "state": "visual_approved", "owner_role": 7, "result": "approved",
+      "checked": ["estilo por cena", "licença Roboto OFL", "legibilidade vertical", "ausência de mapa de previsão local"],
+      "fixes": ["mapa regional e rota específica removidos", "fonte e seta corrigidas no protótipo"],
+      "evidence": ["work/videos/cg-el-nino-001/visual/plan.json", "work/videos/cg-el-nino-001/reports/visual.json"],
+      "open_blockers": []
+    },
+    {
+      "state": "media_ready", "owner_role": 8, "result": "approved",
+      "checked": ["cinco cenas", "900 quadros", "1080x1920", "30 fps", "cinco amostras visuais"],
+      "fixes": ["legendas resumidas retiradas para inserir o SRT completo"],
+      "evidence": ["work/videos/cg-el-nino-001/reports/visual.json", "scripts/render_pilot_visual.py"],
+      "open_blockers": []
+    },
+    {
+      "state": "audio_ready", "owner_role": 9, "result": "approved",
+      "checked": ["cinco falas cabem nas cenas", "mix de 30 segundos", "pico e loudness", "legendas temporizadas", "origem da trilha"],
+      "fixes": ["ganho da voz ajustado para preservar headroom"],
+      "evidence": ["work/videos/cg-el-nino-001/reports/audio.json", "work/videos/cg-el-nino-001/captions/voice.srt"],
+      "open_blockers": []
+    },
+    {
+      "state": "edit_ready", "owner_role": 8, "result": "approved",
+      "checked": ["MP4 local", "resolução", "duração", "áudio", "legendas visíveis", "40199 legível", "ausência de trechos pretos"],
+      "fixes": ["legendas longas divididas em trechos menores"],
+      "evidence": ["work/videos/cg-el-nino-001/reports/assembly.json", "work/videos/cg-el-nino-001/reports/qa.json", "scripts/assemble_pilot.py"],
+      "open_blockers": []
+    }
+  ],
+  "required_evidence": ["fontes factuais do roteiro", "licenças dos ativos", "relatório de áudio", "relatório de vídeo", "checagem de duração e resolução"],
+  "acceptance": {
+    "duration_tolerance_seconds": 0.25, "resolution": "1080x1920", "aspect_ratio": "9:16",
+    "audio_required": true, "captions_required": true,
+    "manual_editing_after_render": false, "publish": false
+  }
+}

@@ -15,7 +15,3 @@ Hipóteses de gancho, primeira imagem, ritmo, revelação e pergunta final; risc
 ## Limites e gate
 
 Não promete viralidade, não inventa estatísticas e não propõe clickbait enganoso. Cada sugestão deve explicar que informação entrega ao espectador e em qual segundo.
-
-## Auto-revisão antes da passagem
-
-Revise a entrega contra as entradas, este contrato, o gate e as regras de segurança. Corrija os erros encontrados e revise novamente. Registre verificações, correções, evidências, bloqueios abertos e resultado. Se o resultado for bloqueado, não repasse a etapa como aprovada; informe o Orquestrador. A auto-revisão não substitui a revisão independente nem a autorização humana quando exigidas.

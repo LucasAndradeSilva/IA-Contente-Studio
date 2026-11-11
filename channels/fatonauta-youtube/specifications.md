@@ -136,15 +136,16 @@ Um astronauta-explorador observa a Terra pelo visor enquanto atravessa uma órbi
 - Evitar conteúdo repetitivo, enganoso ou de baixo valor transformativo.
 - Guardar origem e licença de cada ativo produzido ou utilizado.
 
-## Primeiro piloto
+## Piloto atual
 
-- Tema: Como funcionaria um bunker subterrâneo?
-- ID interno: `cg-bunker-001`
+- Tema: Como funciona um bunker por dentro? (V2, retomado pelo proprietário.)
+- ID interno: `cg-bunker-v2-001`
 - Duração: 30 segundos.
 - Formato: vertical 9:16.
-- Resolução: 1080 × 1920.
+- Resolução: 720 × 1280, conforme referência e pedido da V2.
 - Primeiro gate: validação local, sem upload. Um upload privado ou não listado pertence à etapa posterior e exige autorização específica.
 - Critérios: roteiro verificado, cenas coerentes, áudio inteligível, legendas sincronizadas e relatório técnico.
+- Manifesto ativo: `config/pilot_bunker_v2.json`. El Niño V1 e o manifesto original do bunker permanecem preservados como histórico.
 
 ## Métricas de homologação
 

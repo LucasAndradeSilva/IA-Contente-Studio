@@ -20,7 +20,3 @@ Preservar a linha editorial bíblica e distinguir texto-fonte, tradição, inter
 ## Gate
 
 Cada afirmação relevante tem categoria e fonte; dramatizações estão sinalizadas.
-
-## Auto-revisão antes da passagem
-
-Revise a entrega contra as entradas, este contrato, o gate e as regras de segurança. Corrija os erros encontrados e revise novamente. Registre verificações, correções, evidências, bloqueios abertos e resultado. Se o resultado for bloqueado, não repasse a etapa como aprovada; informe o Orquestrador. A auto-revisão não substitui a revisão independente nem a autorização humana quando exigidas.

@@ -21,9 +21,9 @@ Antes de agir, leia:
 
 - O estado registrado é o último marco aprovado. Leia o campo `next`, acione o `owner_role` desse próximo estado e não refaça artefatos aprovados sem motivo documentado.
 - Produza o `output` do próximo estado e registre fontes, licenças, incertezas e bloqueios aplicáveis.
-- Antes da entrega, o papel responsável revisa o próprio resultado contra entradas, contrato, gate e segurança; corrige falhas e repete a revisão. Registra verificações, correções, evidências e pendências. Se não passar, mantém o estado atual e devolve um bloqueio explícito.
-- A auto-revisão aprovada precede qualquer `review_role` e a conferência do Orquestrador; nenhuma dessas revisões substitui autorização humana para upload, publicação ou gasto.
-- Aplique o gate antes de atualizar `pipeline_state`. Se falhar, retorne ao papel capaz de corrigir a causa; registre a evidência da aprovação quando passar.
+- Evite relatórios de auto-revisão e confirmações entre papéis. Entregue o artefato e avance; se houver falha concreta, retorne diretamente ao papel capaz de corrigi-la.
+- Faça apenas duas conferências obrigatórias: fontes antes do roteiro e propriedades técnicas do MP4 no final. Isso não substitui autorização humana para upload, publicação ou gasto.
+- O roteiro sugere intenções visuais; o Diretor Visual escolhe uma única família de estilo para todas as cenas e um motor de renderização. Protótipos curtos podem comparar motores antes da escolha.
 - Mantenha fatos separados de hipóteses e dramatizações.
 - Não invente pesquisa, licença, métrica, custo, credencial ou evidência de validação.
 - No MVP, pare em `qa_passed`. Upload e publicação são fases separadas e exigem autorização explícita no momento da ação.

@@ -1,0 +1,7 @@
+{
+  "name": "ai-content-studio-renderers",
+  "private": true,
+  "type": "module",
+  "scripts": {"render:browser":"node scripts/render_browser_template.mjs"},
+  "dependencies": {"playwright-core":"1.65.0","three":"0.187.0"}
+}

@@ -3,7 +3,7 @@
   "project": {
     "name": "AI Content Studio",
     "intent": "Criar renda com vídeos curtos produzidos com IA, com alta automação, qualidade suficiente para retenção e monetização e custo inicial mínimo.",
-    "current_phase": "Ambiente local validado; MVP do FatoNauta aguardando briefing",
+    "current_phase": "Três variantes completas do bunker V2 prontas: HTML/CSS 3D, Three.js e Blender Workbench. Cada uma tem 720x1280, 30s, 900 quadros e áudio idêntico. Comparativo lado a lado gerado; avaliação visual do proprietário pendente.",
     "language": "pt-BR"
   },
   "provenance": {
@@ -50,14 +50,16 @@
     "Homologar um canal e uma plataforma por vez.",
     "Começar por Conhecimentos Gerais no YouTube e depois TikTok.",
     "Não abrir ou publicar nos seis perfis antes de validar a produção.",
-    "Primeiro MVP: vídeo vertical de 30 segundos sobre como funciona um bunker subterrâneo.",
+    "MVP atual: bunker V2, vertical 720x1280 e 30 segundos. El Niño V1 preservado como histórico.",
     "Canal FatoNauta no YouTube criado e com personalização inicial publicada.",
     "Quinze papéis lógicos com contratos Markdown; uma única skill coordena o pipeline FatoNauta.",
     "Ambiente local configurado com Python 3.13.17, FFmpeg 9.0.2, Blender 5.2.3 LTS e Piper TTS 1.8.0.",
     "Voz pt_BR-faber-medium escolhida para testes locais do MVP; qualquer upload depende da revisão final da licença dos pesos e do modelo-base.",
     "Adicionar quatro papéis: títulos e thumbnails, comunidade, calendário editorial e estratégia de alcance.",
-    "Roteiro sugere e direção visual seleciona estilos por cena, incluindo opções HTML/CSS/JS e Three.js, com catálogo versionado.",
-    "Cada papel auto-revisa sua entrega, corrige erros e registra o resultado antes de repassar ao Orquestrador; revisão independente e autorização humana continuam exigidas quando aplicáveis."
+    "Direção visual seleciona um único sistema visual para todo o vídeo; a intenção e o foco mudam por cena.",
+    "Passagem direta entre papéis, sem relatórios repetitivos de auto-revisão; conferir fontes antes do roteiro e propriedades técnicas no MP4 final.",
+    "Proprietário esclareceu que ATRAS significa GPT-6 Astra: modelo criativo desta conversa, não motor de vídeo.",
+    "Comparação do bunker concluída com três vídeos completos em HTML/CSS 3D, Three.js e Blender Workbench, mais um comparativo lado a lado."
   ],
   "suggestions_not_yet_approved_or_verified": [
     "Agendador de Tarefas do Windows junto com automações do Codex para o MVP.",
@@ -126,11 +128,12 @@
     ]
   },
   "pilot": {
-    "title": "Como funcionaria um bunker subterrâneo?",
+    "title": "Como funciona um bunker por dentro?",
+    "video_id": "cg-bunker-v2-001",
     "niche": "Conhecimentos Gerais",
     "duration_seconds": 30,
     "format": "vertical 9:16",
-    "resolution": "1080x1920",
+    "resolution": "720x1280",
     "required_outputs": ["roteiro", "storyboard", "cenas", "narração", "música/efeitos licenciados", "legendas sincronizadas", "MP4", "relatório de validação"],
     "manual_editing_target": "zero após o pipeline estar homologado",
     "publication_in_mvp": false
@@ -213,13 +216,11 @@
     "Critérios numéricos mínimos para homologação após os primeiros testes."
   ],
   "next_steps": [
-    "Aprovar o briefing editorial do piloto do bunker.",
-    "Criar e aprovar o pacote factual com fontes do piloto.",
-    "Fechar roteiro e storyboard cronometrados.",
-    "Escolher a técnica visual por cena e registrar a justificativa no manifesto.",
-    "Produzir o primeiro render local com a voz Faber e ativos de licença verificada.",
-    "Medir tempo, qualidade e tamanho; validar o vídeo antes de qualquer upload.",
-    "Revisar a licença comercial da Faber antes de considerar uso público monetizado."
-  ]
+    "Avaliar a nova direção visual do bunker V2 no MP4 local.",
+    "Escolher a direção visual preferida após assistir às três variantes completas e ao comparativo lado a lado.",
+    "Aplicar correções concretas indicadas pelo proprietário sem ciclos genéricos de auto-revisão.",
+    "Revisar a licença dos pesos Faber e do modelo-base Lessac antes de qualquer upload."
+  ],
+  "superseded_pilot": {"video_id":"cg-el-nino-001","manifest":"config/pilot_el_nino.json","status":"historical_v1","reason":"Proprietário retomou o bunker para a V2 e pediu GPT-6 Astra na criação."}
 }
 

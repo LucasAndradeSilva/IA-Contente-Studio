@@ -1,8 +1,16 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
+  "video_level_rule": "Cada vídeo escolhe um único sistema visual. Todas as cenas preservam paleta, materiais, iluminação, câmera e linguagem de movimento; apenas dados, objetos e enquadramentos mudam.",
+  "reference_mold": {
+    "top": "kicker, pílula do assunto, fonte e dado ou frase dominante",
+    "middle": "um objeto ou ação 3D por ideia",
+    "bottom": "legenda em caixa escura com uma palavra destacada",
+    "copy_policy": "Usar a gramática de composição sem copiar marca, texto, personagem ou ativo do canal de referência."
+  },
   "selection_rule": "Escolher por clareza da explicação, custo, tempo, legibilidade vertical, consistência e licença; estilo não garante viralidade.",
   "prompt_template": "Crie uma cena original de {duracao}s em 9:16 para explicar {ideia_verificada}. Estilo: {estilo}. Elementos: {elementos}. Movimento: {movimento}. Preserve área para legendas, contraste e identidade FatoNauta. Sem texto ilegível, marcas, pessoas reais ou fatos não verificados.",
   "styles": [
+    {"id":"toy_3d_explainer","name":"Toy 3D Explainer","best_for":"objetos cotidianos, ações e comparações","route":"HTML/CSS 3D, Three.js ou Blender","motion":"objetos low-poly com câmera suave e um acento neon"},
     {"id":"isometric","name":"Isometric","best_for":"estrutura, fluxos e espaços em corte","route":"Blender ou SVG/Canvas","motion":"câmera suave e camadas reveladas"},
     {"id":"paper_cut","name":"Paper-Cut","best_for":"camadas e processos simples","route":"SVG/HTML/CSS/JS","motion":"recortes em profundidade com parallax"},
     {"id":"3d_data_chart","name":"3D Data Chart","best_for":"dados com fonte e escala verificadas","route":"Three.js ou Blender","motion":"barras ou objetos construídos por etapa"},

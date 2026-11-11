@@ -1,0 +1,22 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: FatoNauta,Roboto,62,&H00E2EFF4,&H00E2EFF4,&H002E1707,&H80000000,-1,0,0,0,100,100,0,0,1,4,2,2,100,150,255,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:01.62,FatoNauta,,0,0,0,,El Niño: e a sua cidade?
+Dialogue: 0,0:00:03.00,0:00:06.60,FatoNauta,,0,0,0,,Primeiro, veja os avisos oficiais.\NEnvie seu CEP por SMS
+Dialogue: 0,0:00:06.60,0:00:08.77,FatoNauta,,0,0,0,,para receber alertas da Defesa\NCivil.
+Dialogue: 0,0:00:10.00,0:00:12.88,FatoNauta,,0,0,0,,Chuva forte, calor e seca pedem\Ncuidados diferentes.
+Dialogue: 0,0:00:12.88,0:00:16.13,FatoNauta,,0,0,0,,Confira o risco e as orientações\Npara sua cidade.
+Dialogue: 0,0:00:17.00,0:00:20.66,FatoNauta,,0,0,0,,Em alerta de enchente, conheça a\Nrota de saída e nunca
+Dialogue: 0,0:00:20.66,0:00:21.66,FatoNauta,,0,0,0,,atravesse áreas alagadas.
+Dialogue: 0,0:00:24.00,0:00:27.14,FatoNauta,,0,0,0,,No calor, hidrate-se. Em qualquer\Ncaso, siga a Defesa
+Dialogue: 0,0:00:27.14,0:00:28.54,FatoNauta,,0,0,0,,Civil da sua região.

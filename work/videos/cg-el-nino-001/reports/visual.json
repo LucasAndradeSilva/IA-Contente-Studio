@@ -1,0 +1,58 @@
+{
+  "video_id": "cg-el-nino-001",
+  "status": "visual_inspection_passed_for_local_handoff",
+  "output": "outputs/cg-el-nino-001/video/visual_only.mp4",
+  "sha256": "6e3b968de81244aa1ff3b38b14738c8afa5e1064afb0e23fb59e78e79bf76f29",
+  "ffprobe": {
+    "width": 1080,
+    "height": 1920,
+    "r_frame_rate": "30/1",
+    "duration": "30.000000",
+    "nb_frames": "900"
+  },
+  "frames_expected": 900,
+  "sample_frames": [
+    "outputs/cg-el-nino-001/video/sample_scene_01.png",
+    "outputs/cg-el-nino-001/video/sample_scene_02.png",
+    "outputs/cg-el-nino-001/video/sample_scene_03.png",
+    "outputs/cg-el-nino-001/video/sample_scene_04.png",
+    "outputs/cg-el-nino-001/video/sample_scene_05.png"
+  ],
+  "font": {
+    "path": "assets/fonts/roboto/Roboto.ttf",
+    "license": "OFL-1.1",
+    "license_file": "assets/fonts/roboto/OFL.txt"
+  },
+  "assets": "Formas e ícones originais desenhados em código; sem fotos, logos oficiais ou CEP real.",
+  "captions": "Não embutidas no vídeo visual; área y=1450–1650 reservada para voice.srt na montagem final.",
+  "external_services": false,
+  "self_review": {
+    "checked": [
+      "storyboard",
+      "5 cenas",
+      "1080x1920",
+      "30fps",
+      "área livre para legendas",
+      "licença da fonte",
+      "fontes de ativos",
+      "cinco quadros de amostra inspecionados",
+      "40199 e marca Exemplo legíveis",
+      "nenhuma legenda resumida embutida"
+    ],
+    "fixes": [
+      "eixo de peso da fonte Roboto corrigido após render inicial",
+      "seta sem glifo substituída por desenho vetorial",
+      "legendas resumidas removidas para reservar área ao SRT completo"
+    ],
+    "evidence": [
+      "outputs/cg-el-nino-001/video/sample_scene_01.png",
+      "outputs/cg-el-nino-001/video/sample_scene_02.png",
+      "outputs/cg-el-nino-001/video/sample_scene_03.png",
+      "outputs/cg-el-nino-001/video/sample_scene_04.png",
+      "outputs/cg-el-nino-001/video/sample_scene_05.png",
+      "outputs/cg-el-nino-001/video/visual_only.mp4"
+    ],
+    "open_blockers": [],
+    "result": "approved_for_local_handoff"
+  }
+}

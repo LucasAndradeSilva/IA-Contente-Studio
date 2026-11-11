@@ -1,0 +1,30 @@
+{
+  "schema_version":"2.0.0",
+  "video_id":"cg-bunker-v2-001",
+  "pipeline_id":"fatonauta-youtube-shorts-v1",
+  "pipeline_state":"qa_passed",
+  "status":"three_variants_ready_local",
+  "comparison":{"status":"complete","duration_seconds":30,"same_audio_verified":true,"report":"work/videos/cg-bunker-v2-001/comparison.json","side_by_side":"outputs/cg-bunker-v2-001/comparativo-3-modelos.mp4","variants":[{"engine":"threejs_webgl","file":"outputs/cg-bunker-v2-001/bunker-v2.mp4"},{"engine":"css_3d_html","file":"outputs/cg-bunker-v2-001/bunker-css3d-v2.mp4"},{"engine":"blender_workbench","file":"outputs/cg-bunker-v2-001/bunker-blender-v2.mp4","editable_source":"outputs/cg-bunker-v2-001/blender/bunker-v2.blend"}]},
+  "outputs":{"mp4":"outputs/cg-bunker-v2-001/bunker-v2.mp4","captions":"outputs/cg-bunker-v2-001/legendas.srt","technical_report":"work/videos/cg-bunker-v2-001/technical.json","gate_scope":"Conferência técnica local; não significa aprovação editorial do proprietário ou licença para upload."},
+  "title_working":"Como funciona um bunker por dentro?",
+  "canvas":{"width":720,"height":1280,"fps":30},
+  "duration_seconds":30,
+  "publication_enabled":false,
+  "external_generation_enabled":false,
+  "creative_model":{"requested":"GPT-6 Astra","execution":"modelo desta conversa; papéis lógicos executados em sequência"},
+  "brief":{"question":"O que existe dentro de um abrigo além de paredes?","scope":"Abrigos civis suíços como exemplo concreto; não generalizar requisitos para todos os bunkers.","promise":"Revelar estrutura, ventilação, equipamentos e saída de emergência em uma maquete animada.","audience":"Público de curiosidades e engenharia do FatoNauta"},
+  "visual_style_selection":{"visual_system_id":"toy_3d_explainer","single_visual_system":true,"engine_candidates":["threejs_webgl"],"selected_engine":"threejs_webgl","palette":["#081426","#53e1ed","#ef9b55","#f4efdf"],"direction":"Uma única maquete low-poly em corte, fundo marinho, fonte legível, foco muda por subsistema, fonte em toda cena, legenda na base.","illustration_note":"Esquema didático sem escala; não é projeto de engenharia."},
+  "sources":[{"id":"BABS","url":"https://www.babs.admin.ch/en/shelters-for-the-population","institution":"Swiss Federal Office for Civil Protection","accessed":"2026-11-09","supports":["casca de concreto armado e portas de proteção","ventilação e filtros","beliches e sanitários secos","saída de emergência","necessidade de manutenção"],"scope":"Abrigos de proteção civil da Suíça"}],
+  "timeline":[
+    {"scene":1,"start":0,"end":5,"heading":"POR DENTRO","label":"UM BUNKER","voice":"O que existe dentro de um bunker? Olha este abrigo suíço.","visual":"Solo se abre e revela maquete em corte.","source_ids":["BABS"]},
+    {"scene":2,"start":5,"end":10,"heading":"CONCRETO","label":"A ESTRUTURA","voice":"Concreto armado forma a estrutura. Portas de proteção fecham as aberturas.","visual":"Casca e porta ganham destaque; porta se fecha.","source_ids":["BABS"]},
+    {"scene":3,"start":10,"end":15,"heading":"AR NOVO","label":"A VENTILAÇÃO","voice":"O ar vem de fora, passando pelo sistema de ventilação e filtros.","visual":"Partículas percorrem duto e caixa de filtro.","source_ids":["BABS"]},
+    {"scene":4,"start":15,"end":20,"heading":"VIDA AQUI","label":"O INTERIOR","voice":"Lá dentro, beliches e sanitários secos ajudam a acomodar as pessoas.","visual":"Beliches e módulo sanitário entram em foco.","source_ids":["BABS"]},
+    {"scene":5,"start":20,"end":25,"heading":"OUTRA SAÍDA","label":"A ROTA EXTRA","voice":"Se a entrada ficar bloqueada, existe uma saída de emergência.","visual":"Entrada recebe blocos; rota lateral pulsa até a superfície.","source_ids":["BABS"]},
+    {"scene":6,"start":25,"end":30,"heading":"QUAL FALTA?","label":"TUDO CONECTADO","voice":"Tudo precisa de manutenção. Qual desses sistemas você não tinha imaginado?","visual":"Vista geral, todos os subsistemas conectados.","source_ids":["BABS"]}
+  ],
+  "voice":{"model":"pt_BR-faber-medium","status":"local_test_only","license_evidence":"assets/voices/piper/pt_BR-faber-medium/LICENSE_EVIDENCE.md"},
+  "assets":{"geometry":"Objetos originais criados em código","font":"Roboto local, OFL","music":"Textura e efeitos originais sintetizados localmente","threejs":"MIT, versão fixada no package-lock.json"},
+  "acceptance":{"width":720,"height":1280,"duration_seconds":30,"publish":false},
+  "decisions":["Bunker retomado a pedido do proprietário; café preservado como experimento anterior.","GPT-6 Astra conduz a criação; HTML/CSS 3D, Three.js e Blender renderizam as três variantes completas.","Comparação concluída: três MP4s de 30s, 720x1280 e 900 quadros cada, com áudio idêntico e um comparativo lado a lado.","Blender usa Workbench com iluminação de estúdio, sombras e oclusão; não Eevee ou Cycles. Projeto 3D e animações originais salvos em .blend.","Sem relatórios repetitivos entre papéis; somente fontes e conferência técnica final."]
+}
